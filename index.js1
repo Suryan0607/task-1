@@ -1,0 +1,10 @@
+var request = new XMLHttpRequest()
+request.open("GET", 'https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json');
+request.send()
+request.onload = function() {
+    var output = JSON.parse(request.response)
+    for (let i of output) {
+        console.log('Flag' + ":" + i.flag);
+        console.log("Name" + ":" + i.name + ',' + "Region" + ":" + i.region + ',' + "Subregion" + ":" + i.subregion + ',' + "Population" + ":" + i.population);
+    }
+}
